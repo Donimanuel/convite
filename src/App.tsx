@@ -20,6 +20,7 @@ import TimelineSection from "./components/TimelineSection";
 import GiftAccounts from "./components/GiftAccounts";
 import RSVPForm from "./components/RSVPForm";
 
+// Componente principal do convite de casamento
 export default function App() {
   const [isEnvelopeOpened, setIsEnvelopeOpened] = useState(() => {
     return localStorage.getItem("wedding_envelope_opened") === "true";
