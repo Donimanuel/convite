@@ -187,5 +187,5 @@ export const WEDDING_CONSTANTS = {
   ],
 
   // Music Option
-  backgroundMusic: "https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" // Highly romantic, elegant luxury piano loop
+  backgroundMusic: "/assets/audio/wedding-theme.mp3" // Highly romantic, elegant luxury piano loop (local copy to avoid CORS)
 };
