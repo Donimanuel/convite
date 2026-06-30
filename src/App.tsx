@@ -22,9 +22,8 @@ import RSVPForm from "./components/RSVPForm";
 
 // Componente principal do convite de casamento
 export default function App() {
-  const [isEnvelopeOpened, setIsEnvelopeOpened] = useState(() => {
-    return localStorage.getItem("wedding_envelope_opened") === "true";
-  });
+  // Always reset envelope state on page reload
+  const [isEnvelopeOpened, setIsEnvelopeOpened] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [toastMsg, setToastMsg] = useState("");
   const [showToast, setShowToast] = useState(false);
@@ -74,7 +73,6 @@ export default function App() {
           >
             <InteractiveEnvelope 
               onOpen={() => {
-                localStorage.setItem("wedding_envelope_opened", "true");
                 setIsEnvelopeOpened(true);
               }}
               groomName={WEDDING_CONSTANTS.groom.firstName}

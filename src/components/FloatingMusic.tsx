@@ -43,15 +43,10 @@ export default function FloatingMusic({ url, autoPlayTrigger }: FloatingMusicPro
     // Event listeners to handle play state changes (ensures React state is 100% in sync with media player)
     const onPlay = () => {
       setIsPlaying(true);
-      localStorage.setItem("wedding_music_playing_state", "playing");
     };
 
     const onPause = () => {
       setIsPlaying(false);
-      // Only set paused state in storage if it wasn't triggered by document hide/visibility change
-      if (!document.hidden) {
-        localStorage.setItem("wedding_music_playing_state", "paused");
-      }
     };
 
     audio.addEventListener("play", onPlay);
@@ -75,12 +70,6 @@ export default function FloatingMusic({ url, autoPlayTrigger }: FloatingMusicPro
   // Handle autoplay when the envelope trigger turns on
   useEffect(() => {
     if (autoPlayTrigger && audioRef.current && !hasStartedRef.current) {
-      const savedPlayState = localStorage.getItem("wedding_music_playing_state");
-      // If the music was manually paused in a previous session, do not force-autoplay on return
-      if (savedPlayState === "paused") {
-        return;
-      }
-
       audioRef.current.play()
         .then(() => {
           hasStartedRef.current = true;
@@ -98,13 +87,6 @@ export default function FloatingMusic({ url, autoPlayTrigger }: FloatingMusicPro
 
     const handleGesture = () => {
       if (hasStartedRef.current || !audioRef.current) return;
-
-      const savedPlayState = localStorage.getItem("wedding_music_playing_state");
-      // If the music was manually paused in a previous session, do not force-autoplay on return
-      if (savedPlayState === "paused") {
-        removeListeners();
-        return;
-      }
 
       audioRef.current.play()
         .then(() => {
