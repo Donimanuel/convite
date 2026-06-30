@@ -26,7 +26,7 @@ export default function CoupleSection() {
     >
       {/* Decorative vector background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-no-repeat bg-contain opacity-5 pointer-events-none select-none"
-        style={{ backgroundImage: "url('/src/assets/images/gold_floral_wreath_1782826669856.jpg')" }}
+        style={{ backgroundImage: "url('/assets/images/gold_floral_wreath_1782826669856.jpg')" }}
       />
 
       <div className="max-w-4xl mx-auto text-center space-y-16 relative z-10">

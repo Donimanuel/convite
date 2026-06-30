@@ -8,13 +8,13 @@ export const WEDDING_CONSTANTS = {
   groom: {
     fullName: "Wilson Dias",
     firstName: "Wilson",
-    avatar: "/src/assets/images/romantic_couple_lineart_1782826706816.jpg", // can use our lineart as beautiful illustration
+    avatar: "/assets/images/romantic_couple_lineart_1782826706816.jpg", // can use our lineart as beautiful illustration
     bio: "Um homem determinado, focado no futuro e que encontrou em Sónia o verdadeiro amor e a parceira perfeita para toda a vida."
   },
   bride: {
     fullName: "Sónia Gonçalves",
     firstName: "Sónia",
-    avatar: "/src/assets/images/romantic_couple_lineart_1782826706816.jpg",
+    avatar: "/assets/images/romantic_couple_lineart_1782826706816.jpg",
     bio: "Uma mulher de sorriso contagiante, cheia de carinho e que viu em Wilson o seu porto seguro, o homem ideal com quem deseja construir uma família."
   },
   

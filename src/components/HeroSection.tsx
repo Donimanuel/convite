@@ -21,7 +21,7 @@ export default function HeroSection({ onNextSection }: HeroSectionProps) {
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-30 select-none pointer-events-none mix-blend-multiply"
         style={{ 
-          backgroundImage: "url('/src/assets/images/cream_paper_texture_1782826688787.jpg')",
+          backgroundImage: "url('/assets/images/cream_paper_texture_1782826688787.jpg')",
           backgroundAttachment: "fixed" 
         }}
       />
@@ -59,7 +59,7 @@ export default function HeroSection({ onNextSection }: HeroSectionProps) {
             transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
             className="absolute inset-0 rounded-full bg-cover bg-center shadow-lg border-2 border-[#C7A86D]/20"
             style={{ 
-              backgroundImage: "url('/src/assets/images/gold_floral_wreath_1782826669856.jpg')",
+              backgroundImage: "url('/assets/images/gold_floral_wreath_1782826669856.jpg')",
               boxShadow: "0 4px 20px rgba(199, 168, 109, 0.15)"
             }}
           />

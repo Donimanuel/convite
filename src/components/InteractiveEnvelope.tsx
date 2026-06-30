@@ -65,8 +65,8 @@ export default function InteractiveEnvelope({ onOpen, groomName, brideName }: In
     <div className="min-h-screen bg-[#FCF8F2] flex flex-col items-center justify-center relative overflow-hidden px-4 py-8">
       {/* Background floral flourishes */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-        <div className="absolute top-0 left-0 w-48 h-48 md:w-80 md:h-80 bg-cover bg-no-repeat rotate-90" style={{ backgroundImage: "url('/src/assets/images/gold_floral_wreath_1782826669856.jpg')" }} />
-        <div className="absolute bottom-0 right-0 w-48 h-48 md:w-80 md:h-80 bg-cover bg-no-repeat -rotate-90" style={{ backgroundImage: "url('/src/assets/images/gold_floral_wreath_1782826669856.jpg')" }} />
+        <div className="absolute top-0 left-0 w-48 h-48 md:w-80 md:h-80 bg-cover bg-no-repeat rotate-90" style={{ backgroundImage: "url('/assets/images/gold_floral_wreath_1782826669856.jpg')" }} />
+        <div className="absolute bottom-0 right-0 w-48 h-48 md:w-80 md:h-80 bg-cover bg-no-repeat -rotate-90" style={{ backgroundImage: "url('/assets/images/gold_floral_wreath_1782826669856.jpg')" }} />
       </div>
 
       <motion.div

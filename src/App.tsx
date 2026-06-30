@@ -113,7 +113,7 @@ export default function App() {
             {/* High Luxury Footer */}
             <footer className="py-12 px-4 sm:px-6 bg-gradient-to-t from-[#2C2621] to-[#3a322b] text-white text-center relative overflow-hidden">
               {/* Subtle gold sparks inside footer */}
-              <div className="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center" style={{ backgroundImage: "url('/src/assets/images/cream_paper_texture_1782826688787.jpg')" }} />
+              <div className="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/cream_paper_texture_1782826688787.jpg')" }} />
               
               <div className="max-w-xl mx-auto space-y-6 relative z-10">
                 <div className="w-12 h-12 rounded-full border border-[#C7A86D]/30 mx-auto flex items-center justify-center text-[#C7A86D] bg-white/5">

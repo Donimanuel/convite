@@ -23,12 +23,12 @@ export default function GuestManual() {
       {/* Top Left decorative floral graphic */}
       <div 
         className="absolute -top-12 -left-12 w-48 h-48 md:w-80 md:h-80 bg-cover opacity-15 select-none pointer-events-none rotate-180"
-        style={{ backgroundImage: "url('/src/assets/images/gold_floral_wreath_1782826669856.jpg')" }}
+        style={{ backgroundImage: "url('/assets/images/gold_floral_wreath_1782826669856.jpg')" }}
       />
       {/* Bottom Right decorative floral graphic */}
       <div 
         className="absolute -bottom-12 -right-12 w-48 h-48 md:w-80 md:h-80 bg-cover opacity-15 select-none pointer-events-none"
-        style={{ backgroundImage: "url('/src/assets/images/gold_floral_wreath_1782826669856.jpg')" }}
+        style={{ backgroundImage: "url('/assets/images/gold_floral_wreath_1782826669856.jpg')" }}
       />
 
       <div className="max-w-4xl mx-auto space-y-16 relative z-10">
