@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fbf9f4;
+  --color-gold-100: #f4edd9;
+  --color-gold-200: #e8dcb3;
+  --color-gold-300: #d8c484;
+  --color-gold-400: #c9ad5e;
+  --color-gold-500: #C7A86D; /* Gold */
+  --color-gold-600: #ae8b47;
+  --color-gold-700: #8c6a33;
+  --color-gold-800: #654c25;
+  --color-gold-900: #423219;
+  
+  --color-forest-50: #f2f6f3;
+  --color-forest-900: #1a2a1f; /* Dark Green */
+  
+  --color-cream: #FCF8F2; /* Cream Off White */
+  --color-charcoal: #2C2621; /* Warm Charcoal Dark */
+  
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Poppins", "Inter", sans-serif;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-sparkle: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Custom styles and smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-500);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-600);
+}
+
+/* Elegant Text Selection */
+::selection {
+  background-color: var(--color-gold-200);
+  color: var(--color-charcoal);
+}
+
+/* Golden text shadows for premium headings */
+.text-glow {
+  text-shadow: 0 0 12px rgba(199, 168, 109, 0.2);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #E6D0A7 0%, #C7A86D 50%, #9F804B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-bg-gradient {
+  background: linear-gradient(135deg, #E6D0A7 0%, #C7A86D 50%, #9F804B 100%);
+}
+
+.glass-card {
+  background: rgba(252, 248, 242, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(199, 168, 109, 0.2);
+}
+
+.glass-card-dark {
+  background: rgba(44, 38, 33, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(199, 168, 109, 0.3);
+}
+
+/* Pulse keyframes for custom usage */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}

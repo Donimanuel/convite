@@ -1,0 +1,6 @@
+{
+  "name": "Convite Digital Wilson & Sónia",
+  "description": "Landing page premium e interativa para o convite de pedido de Wilson e Sónia, contendo envelope virtual, cronómetro, localização, manual do convidado e rsvp no WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
