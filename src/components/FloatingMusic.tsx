@@ -36,20 +36,8 @@ export default function FloatingMusic({ url, autoPlayTrigger }: FloatingMusicPro
     // Synchronize initial mute state
     audio.muted = isMuted;
 
-    // Try to load any previously saved playback position
-    const savedTime = localStorage.getItem("wedding_music_current_time");
-    let initialTimeSet = false;
-    if (savedTime) {
-      try {
-        const parsedTime = parseFloat(savedTime);
-        if (!isNaN(parsedTime) && parsedTime > 0) {
-          audio.currentTime = parsedTime;
-          initialTimeSet = true;
-        }
-      } catch (e) {
-        console.warn("Could not restore saved current time immediately:", e);
-      }
-    }
+    // Clear any previously saved playback position to ensure music starts from 0:00 on page reload
+    localStorage.removeItem("wedding_music_current_time");
 
     // Event listeners to handle play state changes (ensures React state is 100% in sync with media player)
     const onPlay = () => {
@@ -65,36 +53,13 @@ export default function FloatingMusic({ url, autoPlayTrigger }: FloatingMusicPro
       }
     };
 
-    const onTimeUpdate = () => {
-      if (audio) {
-        localStorage.setItem("wedding_music_current_time", String(audio.currentTime));
-      }
-    };
-
-    const onLoadedMetadata = () => {
-      if (savedTime && !initialTimeSet) {
-        try {
-          const parsedTime = parseFloat(savedTime);
-          if (!isNaN(parsedTime) && parsedTime > 0) {
-            audio.currentTime = parsedTime;
-          }
-        } catch (e) {
-          console.warn("Could not restore saved current time on loadedmetadata:", e);
-        }
-      }
-    };
-
     audio.addEventListener("play", onPlay);
     audio.addEventListener("pause", onPause);
-    audio.addEventListener("timeupdate", onTimeUpdate);
-    audio.addEventListener("loadedmetadata", onLoadedMetadata);
 
     return () => {
       audio.pause();
       audio.removeEventListener("play", onPlay);
       audio.removeEventListener("pause", onPause);
-      audio.removeEventListener("timeupdate", onTimeUpdate);
-      audio.removeEventListener("loadedmetadata", onLoadedMetadata);
       audioRef.current = null;
     };
   }, [url]);
@@ -208,17 +173,9 @@ export default function FloatingMusic({ url, autoPlayTrigger }: FloatingMusicPro
       audioRef.current.play()
         .catch((err) => {
           console.error("Manual play failed, trying to reload and play:", err);
-          // Try to recover by reloading and seeking
+          // Try to recover by reloading
           if (audioRef.current) {
             audioRef.current.load();
-            const savedTime = localStorage.getItem("wedding_music_current_time");
-            if (savedTime) {
-              try {
-                audioRef.current.currentTime = parseFloat(savedTime);
-              } catch (seekErr) {
-                console.warn("Seek during reload failed:", seekErr);
-              }
-            }
             audioRef.current.play().catch((err2) => {
               console.error("Reload and play failed:", err2);
             });

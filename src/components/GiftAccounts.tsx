@@ -14,13 +14,43 @@ interface GiftAccountsProps {
 
 export default function GiftAccounts({ onTriggerToast }: GiftAccountsProps) {
   const handleCopy = (text: string, label: string) => {
-    navigator.clipboard.writeText(text)
-      .then(() => {
-        onTriggerToast(`${label} copiado com sucesso!`);
-      })
-      .catch((err) => {
-        console.error("Falha ao copiar:", err);
-      });
+    const fallbackCopyText = (data: string) => {
+      const textArea = document.createElement("textarea");
+      textArea.value = data;
+      // Avoid scrolling to bottom
+      textArea.style.top = "0";
+      textArea.style.left = "0";
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        const successful = document.execCommand("copy");
+        if (successful) {
+          onTriggerToast(`${label} copiado com sucesso!`);
+        } else {
+          onTriggerToast(`Não foi possível copiar. Por favor, selecione e copie manualmente.`);
+        }
+      } catch (err) {
+        console.error("Erro no fallback de cópia:", err);
+        onTriggerToast(`Erro ao copiar ${label}.`);
+      }
+      document.body.removeChild(textArea);
+    };
+
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          onTriggerToast(`${label} copiado com sucesso!`);
+        })
+        .catch((err) => {
+          console.warn("Falha no clipboard API, tentando fallback:", err);
+          fallbackCopyText(text);
+        });
+    } else {
+      fallbackCopyText(text);
+    }
   };
 
   return (
