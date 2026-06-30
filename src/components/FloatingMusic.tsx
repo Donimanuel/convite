@@ -6,6 +6,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
+// Componente de música ambiente flutuante
 interface FloatingMusicProps {
   url: string;
   autoPlayTrigger?: boolean;
