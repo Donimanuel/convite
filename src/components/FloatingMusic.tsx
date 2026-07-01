@@ -31,7 +31,7 @@ export default function FloatingMusic({ url, autoPlayTrigger }: FloatingMusicPro
   useEffect(() => {
     const audio = new Audio(url);
     audio.loop = true;
-    audio.volume = 0.145; // 14.5% volume as requested by the user
+    audio.volume = 0.13; // 13% volume as requested by the user
     audioRef.current = audio;
 
     // Synchronize initial mute state

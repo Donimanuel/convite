@@ -187,5 +187,5 @@ export const WEDDING_CONSTANTS = {
   ],
 
   // Music Option
-  backgroundMusic: "/assets/audio/wedding-theme.mp3" // Highly romantic, elegant luxury piano loop (local copy to avoid CORS)
+  backgroundMusic: "/assets/audio/love-story.mp3" // Indila - Love Story by ViOLiNiA (Instrumental)
 };
