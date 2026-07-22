@@ -5,7 +5,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { Calendar, Clock, MapPin, Shirt } from "lucide-react";
+import { Calendar, Clock, MapPin, Shirt, ExternalLink } from "lucide-react";
 import { WEDDING_CONSTANTS } from "../constants";
 
 export default function EventDetails() {
@@ -186,7 +186,7 @@ export default function EventDetails() {
                 </div>
 
                 {/* Viana/Kapalanga: Rua Norberto de Castro */}
-                <div className="pt-2 max-w-md mx-auto px-1 sm:px-0">
+                <div className="pt-2 max-w-md mx-auto px-1 sm:px-0 space-y-3">
                   <p className="font-sans text-[11px] min-[360px]:text-xs sm:text-base md:text-lg text-[#2C2621]/90 font-medium leading-relaxed break-words">
                     <span className="text-[#8c6a33] font-semibold tracking-wide uppercase text-[9px] min-[360px]:text-[10px] sm:text-xs block mb-1">Endereço</span>
                     Viana / Kapalanga: Rua Norberto de Castro
@@ -194,6 +194,19 @@ export default function EventDetails() {
                   <p className="text-[10px] min-[360px]:text-[11px] sm:text-xs text-[#2C2621]/60 tracking-widest uppercase font-semibold mt-1">
                     Luanda, Angola
                   </p>
+
+                  <div className="pt-2">
+                    <a
+                      href={WEDDING_CONSTANTS.location.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#8c6a33] text-white text-xs sm:text-sm font-medium hover:bg-[#725426] transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
+                    >
+                      <MapPin size={16} />
+                      <span>Abrir no Google Maps</span>
+                      <ExternalLink size={14} />
+                    </a>
+                  </div>
                 </div>
               </div>
 
