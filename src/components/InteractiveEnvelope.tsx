@@ -6,8 +6,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import confetti from "canvas-confetti";
-import { MailOpen, MousePointerClick, MapPin, ExternalLink } from "lucide-react";
-import { WEDDING_CONSTANTS } from "../constants";
+import { MailOpen, MousePointerClick } from "lucide-react";
 
 interface InteractiveEnvelopeProps {
   onOpen: () => void;
@@ -121,21 +120,9 @@ export default function InteractiveEnvelope({ onOpen, groomName, brideName }: In
               style={{ zIndex: 1 }}
             >
               <div className="w-8 h-8 rounded-full border border-[#C7A86D]/40 flex items-center justify-center font-serif text-[#C7A86D] text-xs">WS</div>
-              <div className="space-y-1.5 flex flex-col items-center">
+              <div className="space-y-1">
                 <p className="font-serif italic text-[#C7A86D] text-sm">Estás Convidado</p>
                 <p className="font-serif text-xl tracking-tight text-[#2C2621]">{groomName} & {brideName}</p>
-                <a
-                  href={WEDDING_CONSTANTS.location.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1.5 text-[11px] text-[#8c6a33] font-medium bg-[#C7A86D]/10 hover:bg-[#C7A86D]/20 px-3 py-1 rounded-full border border-[#C7A86D]/30 transition-colors"
-                  title="Ver no Google Maps"
-                >
-                  <MapPin size={12} className="text-[#8c6a33]" />
-                  <span>{WEDDING_CONSTANTS.location.venue}</span>
-                  <ExternalLink size={10} className="text-[#8c6a33]" />
-                </a>
               </div>
               <div className="w-12 h-[1px] bg-[#C7A86D]" />
             </motion.div>
@@ -199,22 +186,6 @@ export default function InteractiveEnvelope({ onOpen, groomName, brideName }: In
           </span>
           <MousePointerClick size={16} className="text-[#C7A86D]/80 animate-pulse" />
         </motion.div>
-
-        {/* Direct Google Maps Location Link */}
-        <motion.a
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          href={WEDDING_CONSTANTS.location.googleMapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#FCF8F2] border border-[#C7A86D]/50 shadow-md text-xs font-medium text-[#8c6a33] hover:bg-[#C7A86D] hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 group z-20 cursor-pointer mt-1"
-        >
-          <MapPin size={15} className="text-[#C7A86D] group-hover:text-white transition-colors" />
-          <span>Ver Localização no Google Maps</span>
-          <ExternalLink size={13} className="text-[#8c6a33]/70 group-hover:text-white transition-colors" />
-        </motion.a>
       </motion.div>
     </div>
   );
