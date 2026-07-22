@@ -30,7 +30,7 @@ export const WEDDING_CONSTANTS = {
     street: "Rua Norberto de Castro",
     city: "Luanda",
     fullAddress: "Salão de Festa Suzymar, Viana/Kapalanga, Rua Norberto de Castro, Luanda, Angola",
-    googleMapsUrl: "https://www.google.com/maps/place/Pensao+Susymar,+Luanda/@-8.9159683,13.4069617,17z"
+    googleMapsUrl: "https://www.google.com/maps/place/3CM4%2BJQ+Pensao+Susymar,+Luanda/data=!4m2!3m1!1s0x1a51f900799bb5c7:0x8fc9cba2e5e468a3"
   },
 
   // Contact for RSVP
