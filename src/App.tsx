@@ -17,7 +17,6 @@ import CoupleSection from "./components/CoupleSection";
 import EventDetails from "./components/EventDetails";
 import GuestManual from "./components/GuestManual";
 import TimelineSection from "./components/TimelineSection";
-import GiftAccounts from "./components/GiftAccounts";
 import RSVPForm from "./components/RSVPForm";
 
 // Componente principal do convite de casamento
@@ -103,8 +102,6 @@ export default function App() {
             <GuestManual />
             
             <TimelineSection />
-            
-            <GiftAccounts onTriggerToast={triggerToast} />
             
             <RSVPForm />
 

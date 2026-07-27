@@ -55,24 +55,6 @@ export const WEDDING_CONSTANTS = {
     heroQuote: "Com alegria nos nossos corações, convidamos você para celebrar o início da nossa história para sempre."
   },
 
-  // Bank Accounts for Gifts
-  bankAccounts: [
-    {
-      bankName: "Banco IBAN Angola",
-      owner: "Wilson Dias",
-      accountNumber: "0810188730159",
-      iban: "0006-0000-0810-1887-30159",
-      logoType: "BAI"
-    },
-    {
-      bankName: "Banco IBAN Angola",
-      owner: "Sónia Fernanda Bala Gonçalves",
-      accountNumber: "2305828810137",
-      iban: "0040-0000-2305-8288-10137",
-      logoType: "BFA"
-    }
-  ],
-
   // Guest Manual Guidelines (from the PDF)
   guestManual: [
     {
